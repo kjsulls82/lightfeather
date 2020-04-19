@@ -14,15 +14,13 @@ Any browser of your liking (I recommend chrome) <br />
  - Once the WebServer is running, copy the link that says "Now listening on: https://localhost:23456" 
  - In postman, create a new POST request, paste the above link and send a payload with structure below as an example
  ```
-{	"Shift": 2,	"Message":"" }
+{"Shift": 2,	"Message":""}
 ```
 For this example, you will get a response of 
 ```
 {"encodedMessage": "ddddd 122 hhhhhh"} 
 Also, a file on disk c:\temp\encodedMessage.txt if successful.
 ```
-
-
 ## Question 2: WebComponent
 - To run this application you must
   1) Open a windows terminal or git bash terminal 
