@@ -1,0 +1,129 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+     
+}
+
+    <div class="container-fluid  col-md-5 border">
+        <form class="needs-validation" id="registerForm" novalidate action="" method="post">
+            <div class="text-center">
+                <h2>Register</h2>
+                <p class="hint-text">Create your account.</p>
+            </div>
+
+            <div class="form-group">
+                <input type="text"
+                       class="form-control"
+                       id="username"
+                       name="username"
+                       placeholder="Username"
+                       required
+                       maxlength="15"
+                       pattern=".{5,15}"
+                       autocomplete="no">
+                <div class="invalid-feedback">Username must be between 5 and 15 characters</div>
+            </div>
+            <div class="form-group">
+                <input type="email"
+                       class="form-control"
+                       id="email"
+                       name="email"
+                       placeholder="Email"                       
+                       required>
+                <div class="invalid-feedback">Please enter a valid email address.</div>
+            </div>
+            <div class="form-group">
+                <input type="password"
+                       class="form-control"
+                       id="password"
+                       name="password"
+                       placeholder="Password"
+                       required
+                       pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,10}$">
+                <div class="invalid-feedback">Must be between 6 and 10 chars: 1 uppercase, 1 lowercase and numeric.</div>
+            </div>
+            <div class="form-group">
+                <input type="password"
+                       class="form-control"
+                       id="confirmPassword"
+                       name="confirmPassword"
+                       placeholder="Confirm Password"
+                       required
+                       pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,10}$"
+                       onblur="">
+                <div class="invalid-feedback">Passwords do not match.</div>
+            </div>
+            <div class="form-group">
+                <button id="submit" type="submit" class="btn btn-primary btn-lg btn-block" disabled>Submit</button>
+            </div>
+        </form>
+    </div>
+
+    <script src="~/js/emailValidation.js"> </script>
+
+    <script>
+
+        (function () {
+            'use strict';
+
+             window.addEventListener('load', function () {
+                
+                var inputs = document.getElementsByClassName('form-control')
+               
+                var validation = Array.prototype.filter.call(inputs, function (input) {
+
+                    if (input.id === "email")
+                        return;
+
+                    input.addEventListener('blur', function (event) {
+                        
+                        input.classList.remove('is-invalid')
+                        input.classList.remove('is-valid')
+
+                        if (input.checkValidity() === false) {
+                            input.classList.add('is-invalid')
+                        }
+                        else {
+                            input.classList.add('is-valid')
+                        }
+
+                    }, false);
+                });
+            }, false);
+
+
+            $("#confirmPassword").on("blur", function (e) {
+                e.stopPropagation();
+                e.preventDefault();
+
+                if ($("#password").val !== this.val) {
+                    this.classList.add('is-invalid')
+                }
+            });
+
+            const form = document.getElementById('registerForm');
+            form.addEventListener("change", () => {
+                document.getElementById('submit').disabled = !form.checkValidity()
+            });
+
+
+            $("#email").on("blur", function (e) {
+                e.stopPropagation();
+                e.preventDefault();
+
+                var result = emailValidation().exec(this.value);
+
+                // reset
+                this.classList.remove('is-invalid')
+                this.classList.remove('is-valid')
+
+                if (result) {                    
+                    this.classList.add('is-valid')
+                }
+                else {                    
+                    this.classList.add('is-invalid')
+                }                
+            });
+
+        })();
+
+    </script>
