@@ -1,11 +1,11 @@
 # lightfeather
 LighFeather Coding Challenge
 
-PreRequisites:<br />
-.NET Core 3.1
-Windows Terminal or Git Bash Terminal
-Postman
-Any browser of your liking (I recommend chrome)
+PreRequisites: <br />
+.NET Core 3.1 <br />
+Windows Terminal or Git Bash Terminal <br />
+Postman <br />
+Any browser of your liking (I recommend chrome) <br />
 
 Question 1: WebServer
  - To run the application you must 
