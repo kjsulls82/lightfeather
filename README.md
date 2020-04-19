@@ -1,7 +1,7 @@
 # lightfeather
 LighFeather Coding Challenge
 
-PreRequsities:
+PreRequsities:\n
 .NET Core 3.1
 Windows Terminal or Git Bash Terminal
 Postman
