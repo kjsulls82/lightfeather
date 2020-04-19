@@ -1,13 +1,13 @@
 # lightfeather
 LighFeather Coding Challenge
 
-<h1>PreRequisites:<h1> <br />
+<h3>PreRequisites:</h3> <br />
 .NET Core 3.1 <br />
 Windows Terminal or Git Bash Terminal <br />
 Postman <br />
 Any browser of your liking (I recommend chrome) <br />
 
-Question 1: WebServer
+<h3>Question 1: WebServer </h3>
  - To run the application you must 
    1) Open a windows terminal or git bash terminal 
    2) Navigate to ~/LightFeatherCodeChallenge/WebServer
@@ -16,7 +16,7 @@ Question 1: WebServer
  - In postman, create a new POST request, paste the above link and send a payload with structure (i.e){	"Shift": 2,	"Message":    "bbbbb 122 ffffff" }. For this example, you will get a response of {"encodedMessage": "ddddd 122 hhhhhh"} and will also find
 a file on disk c:\temp\encodedMessage.txt if successful.
 
-Question 2: WebComponent
+<h3>Question 2: WebComponent </h3>
 - To run this application you must
   1) Open a windows terminal or git bash terminal 
   2) Navigate to ~/LightFeatherCodeChallenge/WebComponent
